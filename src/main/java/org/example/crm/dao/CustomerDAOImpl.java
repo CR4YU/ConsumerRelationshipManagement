@@ -1,9 +1,7 @@
 package org.example.crm.dao;
 
 import org.example.crm.model.Customer;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +18,7 @@ public class CustomerDAOImpl implements CustomerDAO{
 	public List<Customer> findAll() {
 		return sessionFactory
 				.getCurrentSession()
-				.createQuery("from customer", Customer.class)
+				.createQuery("from Customer", Customer.class)
 				.getResultList();
 	}
 }

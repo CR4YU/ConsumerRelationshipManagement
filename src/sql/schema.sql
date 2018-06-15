@@ -15,12 +15,11 @@ CREATE TABLE customer (
   age INT DEFAULT NULL CHECK (age > 0 AND age < 120),
   email VARCHAR(100) DEFAULT NULL CHECK (email ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$'),
   phone VARCHAR(20) DEFAULT NULL CHECK (phone ~* '\+{0,1}[- 0-9]+')
-
 );
 
 INSERT INTO customer(first_name, last_name, age, email, phone) VALUES
 	('David','Adams', 20, 'david@email.com', '626761325'),
-	('John','Doe', 30,'john@gmail.com', 753564243),
-	('Ajay','Rao', 18,'ajay@yahoo.com', 267765431),
+	('John','Doe', 30,'john@gmail.com', '753564243'),
+	('Ajay','Rao', 18,'ajay@yahoo.com', '267765431'),
 	('Mary','Public', 24,'mary@microsoft.com', '+48 356351626'),
 	('Maxwell','Dixon', 41,'max@gmail.com', '+70 242322189');
