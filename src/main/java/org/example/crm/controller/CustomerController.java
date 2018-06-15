@@ -4,6 +4,7 @@ import org.example.crm.dao.CustomerDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -13,7 +14,7 @@ public class CustomerController {
 	@Autowired
 	CustomerDAO customerDAO;
 
-	@RequestMapping("/list")
+	@GetMapping("/list")
 	public String listCustomers(Model model) {
 		model.addAttribute("customers", customerDAO.findAll());
 		return "list-customers";
