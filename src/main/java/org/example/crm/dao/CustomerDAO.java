@@ -6,4 +6,10 @@ import java.util.List;
 public interface CustomerDAO {
 
 	List<Customer> findAll();
+
+	void saveCustomer(Customer customer);
+
+	Customer getCustomer(Long id);
+
+	void deleteCustomer(Long id);
 }
