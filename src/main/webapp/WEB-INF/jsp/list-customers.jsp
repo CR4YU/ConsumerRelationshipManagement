@@ -18,7 +18,7 @@
         <div id="content">
 
             <form:form action="search" method="POST">
-                Search customer: <input type="text" name="theSearchName" />
+                Search customer: <input type="text" name="name" />
 
                 <input type="submit" value="Search" class="add-button" />
             </form:form>

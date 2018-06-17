@@ -43,4 +43,20 @@ public class CustomerDAOImpl implements CustomerDAO{
 				.setParameter("id", id)
 				.executeUpdate();
 	}
+
+	@Override
+	public List<Customer> searchCustomers(String name) {
+		if (name != null && name.trim().length() > 0) {
+			String hql = "from Customer where lower(firstName) like :name " +
+					"or lower(lastName) like :name or lower(email) like :name " +
+					"order by lastName";
+			return sessionFactory
+					.getCurrentSession()
+					.createQuery(hql, Customer.class)
+					.setParameter("name", "%" + name.toLowerCase() + "%")
+					.getResultList();
+		} else {
+			return findAll();
+		}
+	}
 }
