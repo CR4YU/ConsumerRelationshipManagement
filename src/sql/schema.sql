@@ -10,16 +10,18 @@ CREATE SEQUENCE customer_id_seq
 
 CREATE TABLE customer (
   id INT PRIMARY KEY DEFAULT nextval('customer_id_seq') NOT NULL,
-  first_name VARCHAR(45) DEFAULT NULL,
-  last_name VARCHAR(45) DEFAULT NULL,
-  age INT DEFAULT NULL CHECK (age > 0 AND age < 120),
-  email VARCHAR(100) DEFAULT NULL CHECK (email ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$'),
-  phone VARCHAR(20) DEFAULT NULL CHECK (phone ~* '\+{0,1}[- 0-9]+')
+  first_name VARCHAR(45) NOT NULL,
+  last_name VARCHAR(45) NOT NULL,
+  date_birth DATE NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL CHECK (email ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$'),
+  phone VARCHAR(20) NOT NULL CHECK (phone ~* '\+{0,1}[- 0-9]+')
 );
 
-INSERT INTO customer(first_name, last_name, age, email, phone) VALUES
-	('David','Adams', 20, 'david@email.com', '626761325'),
-	('John','Doe', 30,'john@gmail.com', '753564243'),
-	('Ajay','Rao', 18,'ajay@yahoo.com', '267765431'),
-	('Mary','Public', 24,'mary@microsoft.com', '+48 356351626'),
-	('Maxwell','Dixon', 41,'max@gmail.com', '+70 242322189');
+INSERT INTO customer(first_name, last_name, date_birth, email, phone) VALUES
+	('David','Adams', '1995-04-07', 'david@email.com', '626761325'),
+	('John','Doe', '1990-02-20', 'john@gmail.com', '753564243'),
+	('Ajay','Rao', '1980-05-18', 'ajay@yahoo.com', '267765431'),
+	('Cristina','Pacho', '2000-05-10', 'cristina@yahoo.com', '927-542-5134'),
+	('Jessie','Pinkman', '1998-03-16', 'jessie@microsoft.com', '6543664335'),
+	('Mary','Public', '1985-12-20', 'mary@microsoft.com', '+48 356351626'),
+	('Maxwell','Dixon', '1982-06-12', 'max@gmail.com', '+70 242322189');

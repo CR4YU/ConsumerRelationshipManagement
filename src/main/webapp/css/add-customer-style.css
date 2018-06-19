@@ -1,21 +1,26 @@
-.form-style-2{
-    padding: 20px 12px 10px 20px;
-    font: 13px Arial, Helvetica, sans-serif;
+.error {
+    color: red;
+    margin-left: 10px;
+    font-size: 15px;
+    padding-top:5px;
 }
 
-.form-style-2 label{
-    display: block;
-    margin: 0px 0px 15px 0px;
+.form-row {
+    display: inline-block;
+    padding-top: 10px;
 }
-.form-style-2 label > span{
-    width: 100px;
+
+label {
+    font: 16px Arial, Helvetica, sans-serif;
+    margin-right: 10px;
     font-weight: bold;
-    float: left;
-    padding-top: 8px;
-    padding-right: 5px;
+    padding-top: 5px;
+    width: 150px;
 }
-.form-style-2 span.required{
-    color:red;
+
+.form-row input[type=text],
+.form-row input[type=email]{
+    width: 30%;
 }
 
 

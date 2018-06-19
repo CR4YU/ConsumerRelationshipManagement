@@ -40,7 +40,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-            <th>Age</th>
+            <th>Birth date</th>
             <th>Phone</th>
             <th style="text-align: center">Actions</th>
         </tr>
@@ -57,7 +57,7 @@
                 <td> ${customer.firstName} </td>
                 <td> ${customer.lastName} </td>
                 <td> ${customer.email} </td>
-                <td> ${customer.age} </td>
+                <td> ${customer.dateOfBirth} </td>
                 <td> ${customer.phone} </td>
                 <td style="text-align: center">
                     <input type="button" onclick="window.location.href='${updateLink}'; return false;" value="&#9998;" class="button" />

@@ -1,6 +1,11 @@
 package org.example.crm.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import java.util.Date;
 
 @Entity
 @Table(name = "customer")
@@ -13,27 +18,40 @@ public class Customer {
 	private Long id;
 
 	@Column(name = "first_name")
+	@NotNull(message = "Field required!")
 	private String firstName;
 
 	@Column(name = "last_name")
+	@NotNull(message = "Field required!")
 	private String lastName;
 
-	@Column(name = "age")
-	private short age;
+	@Column(name = "date_birth")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message = "Field required!")
+	private Date dateOfBirth;
 
 	@Column(name = "email")
+	@Pattern(regexp = "^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$", message = "Incorrect email address!")
+	@NotNull(message = "Field required!")
 	private String email;
 
 	@Column(name = "phone")
+	@Pattern(regexp = "\\+{0,1}[- 0-9]+", message = "Incorrect phone number!")
+	@NotNull(message = "Field required!")
 	private String phone;
 
 	public Customer() {
 	}
 
-	public Customer(String firstName, String lastName, short age, String email, String phone) {
+	public Customer(@NotNull(message = "required") String firstName,
+					@NotNull(message = "required") String lastName,
+					@NotNull(message = "required") Date dateOfBirth,
+					@NotNull(message = "required") String email,
+					@NotNull(message = "required") String phone) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.age = age;
+		this.dateOfBirth = dateOfBirth;
 		this.email = email;
 		this.phone = phone;
 	}
@@ -62,12 +80,12 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public short getAge() {
-		return age;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setAge(short age) {
-		this.age = age;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public String getEmail() {

@@ -26,18 +26,17 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="form-style-2">
-                <form:form action="saveCustomer" modelAttribute="customer" method="post">
-                    <form:hidden path="id"/>
-                    <label><span>First name<span class="required"></span></span><form:input path="firstName" class="input" /></label>
-                    <label><span>Last name<span class="required"></span></span><form:input path="lastName" class="input" /></label>
-                    <label><span>Email<span class="required"></span></span><form:input path="email" class="input" /></label>
-                    <label><span>Age<span class="required"></span></span><form:input path="age" class="input" /></label>
-                    <label><span>Telephone<span class="required"></span></span><form:input path="phone" class="input" /></label>
-                    <label><span>&nbsp;</span><input type="submit" value="Save" class="button"/></label>
-                </form:form>
-            </div>
+        <div class="col-md-8 offset-md-3">
+            <form:form action="saveCustomer" modelAttribute="customer" method="post">
+                <form:hidden path="id"/>
+                <div class="form-row"><label>First name</label> <form:input path="firstName" class="input" /><form:errors path="firstName" cssClass="error"/></div>
+                <div class="form-row"><label>Last name</label> <form:input path="lastName" class="input" /><form:errors path="lastName" cssClass="error"/></div>
+                <div class="form-row"><label>Email</label> <form:input type ="email" path="email" class="input" /> <form:errors path="email" cssClass="error"/></div>
+                <div class="form-row"><label>Birth date</label> <form:input type="date" path="dateOfBirth" class="input" /><form:errors path="dateOfBirth" cssClass="error"/></div>
+                <div class="form-row"><label>Phone number</label> <form:input path="phone" class="input" /><form:errors path="phone" cssClass="error"/></div>
+                <div class="form-row"><label></label><input type="submit" value="Save" class="button"/></div>
+            </form:form>
+
         </div>
     </div>
 

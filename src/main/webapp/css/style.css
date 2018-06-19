@@ -1,6 +1,6 @@
 #container{
     margin: 0 auto;
-    width: 1020px;
+    width: 70%;
     background-color: #e5ecea;
     padding: 0px 40px 30px 40px;
 }
@@ -52,6 +52,7 @@
     box-shadow: 1px 1px 4px #DADADA;
     border-radius: 3px;
     margin-left: 5px;
+    font-weight: bold;
 }
 .button:hover {
     background-color: #05003c;
