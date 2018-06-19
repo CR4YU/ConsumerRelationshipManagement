@@ -11,6 +11,6 @@ Application allows to list, create, edit and delete customers.
 
 ## Screenshots
 * List all customers
-![Alt text](screenshots/list.png?raw=true "Screenshot")
+![Alt text](screenshots/list.png?raw=true "Screenshot - list")
 * Save customer
-![Alt text](screenshots/save.png?raw=true "Screenshot")
+![Alt text](screenshots/save.png?raw=true "Screenshot - save")
