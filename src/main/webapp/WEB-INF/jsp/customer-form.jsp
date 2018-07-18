@@ -41,7 +41,6 @@
     </div>
 
 
-
     <div class="col">
         <input type="button" onclick="window.location.href='${pageContext.request.contextPath}/customer/list'; return false;" value="&#127968;" class="button" />
     </div>

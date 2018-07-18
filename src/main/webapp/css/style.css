@@ -62,6 +62,22 @@
     float : right;
 }
 
+#button-logout {
+    float : right;
+}
+
+#user-section {
+    float : right;
+}
+
+#user-name {
+    float : right;
+}
+
+#user-roles {
+    float : right;
+}
+
 th {
     background-color: #008CBA;
     color: white;

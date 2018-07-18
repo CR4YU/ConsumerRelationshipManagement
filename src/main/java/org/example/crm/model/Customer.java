@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -19,10 +20,12 @@ public class Customer {
 
 	@Column(name = "first_name")
 	@NotNull(message = "Field required!")
+	@Size(min=1, message="is required")
 	private String firstName;
 
 	@Column(name = "last_name")
 	@NotNull(message = "Field required!")
+	@Size(min=1, message="is required")
 	private String lastName;
 
 	@Column(name = "date_birth")
@@ -42,18 +45,6 @@ public class Customer {
 	private String phone;
 
 	public Customer() {
-	}
-
-	public Customer(@NotNull(message = "required") String firstName,
-					@NotNull(message = "required") String lastName,
-					@NotNull(message = "required") Date dateOfBirth,
-					@NotNull(message = "required") String email,
-					@NotNull(message = "required") String phone) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.dateOfBirth = dateOfBirth;
-		this.email = email;
-		this.phone = phone;
 	}
 
 	public Long getId() {

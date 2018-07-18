@@ -23,7 +23,6 @@ public class CustomerController {
 	public void initBinder(WebDataBinder dataBinder) {
 		boolean trimToNull = true;
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(trimToNull);
-
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}
 
@@ -33,7 +32,7 @@ public class CustomerController {
 		return "list-customers";
 	}
 
-	@GetMapping("/showFormForAddCustomer")
+	@GetMapping("/addCustomer")
 	public String showFormForAddCustomer(Model model) {
 		model.addAttribute("customer", new Customer());
 		return "customer-form";
@@ -48,13 +47,13 @@ public class CustomerController {
 		return "redirect:/customer/list";
 	}
 
-	@GetMapping("/showFormForUpdateCustomer")
+	@GetMapping("/updateCustomer")
 	public String showFormForUpdateCustomer( @RequestParam("customerId") Long id, Model model) {
 		model.addAttribute("customer", customerService.getCustomer(id));
 		return "customer-form";
 	}
 
-	@GetMapping("/delete")
+	@GetMapping("/deleteCustomer")
 	public String deleteCustomer(@RequestParam("customerId") Long id) {
 		customerService.deleteCustomer(id);
 		return "redirect:/customer/list";
