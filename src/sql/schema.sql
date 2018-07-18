@@ -36,6 +36,10 @@ INSERT INTO customer(first_name, last_name, date_birth, email, phone) VALUES
 	('Cristina','Pacho', '2000-05-10', 'cristina@yahoo.com', '927-542-5134'),
 	('Jessie','Pinkman', '1998-03-16', 'jessie@microsoft.com', '6543664335'),
 	('Mary','Public', '1985-12-20', 'mary@microsoft.com', '+48 356351626'),
+	('Pablo','Escobar', '1970-03-20', 'pablo@gmail.com', '6544567631'),
+	('Anna','Paulson', '2000-06-06', 'anna@yahoo.com', '87651135134'),
+	('Jessica','Pearson', '1989-11-18', 'jessica@microsoft.com', '+22 46543453'),
+	('Mike','Burn', '1990-09-09', 'mike@yahoo.com', '+43 362524644'),
 	('Maxwell','Dixon', '1982-06-12', 'max@gmail.com', '+70 242322189');
 
 INSERT INTO users VALUES
